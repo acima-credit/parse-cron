@@ -1,5 +1,5 @@
 # Parse-Cron
-## Parse crontab syntax to determine scheduled run times [![Build Status](https://travis-ci.org/siebertm/parse-cron.png)](https://travis-ci.org/siebertm/parse-cron)
+## Parse crontab syntax to determine scheduled run times [![Build Status](https://travis-ci.org/acima-credit/parse-cron.png)](https://travis-ci.org/acima-credit/parse-cron)
 
 The goal of this gem is to parse a crontab timing specification and determine when the
 job should be run. It is not a scheduler, it does not run the jobs.
