@@ -1,0 +1,71 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - scrap/**/*
+    - lib/tasks/*
+    - bin/*
+    - "**/*.gemspec"
+  TargetRubyVersion: 2.4
+
+Naming/FileName:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/LineLength:
+  AllowURI: true
+  Max: 120
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 25
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+
+Metrics/ModuleLength:
+  CountComments: false
+  Max: 120
+  Exclude:
+    - spec/**/*.rb
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/CollectionMethods:
+  PreferredMethods:
+    collect:  'map'
+    reduce:   'inject'
+    find:     'detect'
+    find_all: 'select'
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19
+
+Layout/SpaceAroundOperators:
+  AllowForAlignment: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Layout/AlignHash:
+  EnforcedColonStyle: key
+
+Style/CaseEquality:
+  Enabled: false
+
+
