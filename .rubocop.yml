@@ -5,7 +5,7 @@ AllCops:
     - lib/tasks/*
     - bin/*
     - "**/*.gemspec"
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.1
 
 Naming/FileName:
   Enabled: false

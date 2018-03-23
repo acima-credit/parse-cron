@@ -148,7 +148,7 @@ class CronParser
 
   def parse_element(elem, allowed_range)
     values = elem.split(',').map do |subel|
-      if subel.match?(/^\*/)
+      if subel =~ /^\*/
         step = subel.length > 1 ? subel[2..-1].to_i : 1
         stepped_range(allowed_range, step)
       else
