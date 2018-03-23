@@ -6,12 +6,20 @@ require 'date'
 # Parses cron expressions and computes the next occurence of the "job"
 #
 class CronParser
+  def self.default_source
+    @default_source || Time
+  end
+
+  class << self
+    attr_writer :default_source
+  end
+
   # internal "mutable" time representation
   class InternalTime
     attr_accessor :year, :month, :day, :hour, :min
     attr_accessor :time_source
 
-    def initialize(time, time_source = Time)
+    def initialize(time, time_source = CronParser.default_source)
       @year  = time.year
       @month = time.month
       @day   = time.day
@@ -53,7 +61,7 @@ class CronParser
     'sat' => '6'
   }.freeze
 
-  def initialize(source, time_source = Time)
+  def initialize(source, time_source = CronParser.default_source)
     @source      = interpret_vixieisms(source)
     @time_source = time_source
     validate_source
@@ -287,6 +295,7 @@ class CronParser
 
   def validate_source
     raise ArgumentError, 'not a valid cronline' unless @source.respond_to?(:split)
+
     source_length = @source.split(/\s+/).length
     return if source_length >= 5 && source_length <= 6
 
